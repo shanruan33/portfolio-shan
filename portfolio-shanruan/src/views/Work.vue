@@ -1,10 +1,7 @@
 <template>
   <div class="site-section">
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link>|
-    </div> -->
     <div class="container">
-      <div class="row align-items-center">
+      <div id="top" class="row align-items-center">
         <div class="col-md-7" data-aos="fade-up">
           <h2>{{updateName}}</h2>
           <p>{{updateDescription}} </p>
@@ -24,11 +21,6 @@
               <p class="mb-4">
                 <span class="text-muted">{{updateCategory}}</span>
               </p>
-              <!-- 
-              <div class="mb-5">
-                <p>{{work.description}}</p>
-              </div>-->
-
               <h4 class="h4 mb-3">Technical Sheet</h4>
               <ul class="list-unstyled list-line mb-5">
                 <li v-for="tech in updateTech" :key="tech">{{tech}}</li>
@@ -53,34 +45,8 @@
 import Portfolio from "@/components/Portfolio";
 export default {
   name: "Work",
-  //props: ["element"],
-  //   props: {
-  //     name: String
-  //   }
   component: {
     Portfolio
-  },
-  data() {
-    return {
-      work: {
-        name: "",
-        description: "",
-        label: "",
-        img: "",
-        tech: [],
-        category: ""
-      }
-    };
-  },
-  methods: {
-    // changeDetail(el) {
-      // this.work.name = el.name;
-      // this.work.label = el.label;
-      // this.work.category = el.category;
-      // this.work.description = el.description;
-      // this.work.techs = el.tech;
-      // console.log(this.$router.currentRoute.path);
-    // }
   },
   computed: {
     updateName() {

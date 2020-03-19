@@ -13,9 +13,6 @@ export const store = new Vuex.Store({
         category: "Web_Dev"
     },
     mutations: {
-        // incrementCounter(state, payload) {
-        //     state.count += payload
-        // }
         updateDetail(state, el){
             state.name = el.name;
             state.name = el.name;
@@ -25,20 +22,13 @@ export const store = new Vuex.Store({
             state.techs = el.tech;
         }
     },
-
     actions: {
-        // inrementAction({ commit }, payload) {
-        //     commit('incrementCounter', payload)
-        // }
         updateAction({commit}, el){
             commit('updateDetail', el)
         }
     },
 
     getters: {
-        // counter(state) {
-        //     return state.count
-        // }
         updateName(state){
             return state.name;
         },

@@ -159,9 +159,6 @@ export default {
           React: function(el) {
             return !!el.react;
           },
-          // transition: function(el) {
-          //   return el.category === "transition";
-          // },
           Web_Dev: function(el) {
             return el.category === "Web_Dev";
           },
@@ -174,16 +171,6 @@ export default {
           Other: function(el) {
             return el.category === "other";
           }
-
-          // "react but not transition": function(el) {
-          //   return !!el.react && el.category !== "transition";
-          // },
-          // "number > 50": function(el) {
-          //   return el.number > 50;
-          // },
-          // "name ends with ium": function(el) {
-          //   return el.name.match(/ium$/);
-          // }
         }
       }
     };
@@ -195,18 +182,14 @@ export default {
     layout() {
       this.$refs.cpt.layout("masonry");
     },
-    // showDetail(el) {
-    //   this.$emit("showDetail", el);
-    //   console.log(el.name);
-    //   console.log(this.$router.currentRoute.path);
-    // },
+
     updateDetail (el) {
-        this.$store.dispatch('updateAction', el)
+        this.$store.dispatch('updateAction', el);
+        window.scrollTo(0,0);
       }
   },
 };
 </script>
 
 <style>
-/* @import "../assets/vendor/bootstrap/css/bootstrap.min.css"; */
 </style>
