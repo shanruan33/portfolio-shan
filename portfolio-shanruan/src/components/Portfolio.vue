@@ -51,7 +51,7 @@
             :key="index"
             class="item col-sm-6 col-md-4 col-lg-4 mb-4"
           >
-            <router-link to="/work" class="item-wrap" @click.native="showDetail(element)">
+            <router-link to="/work" class="item-wrap" @click.native="updateDetail(element)">
               <div class="work-info">
                 <h3 class="name">{{element.name}}</h3>
                 <p class="label">{{element.label}}</p>
@@ -195,11 +195,14 @@ export default {
     layout() {
       this.$refs.cpt.layout("masonry");
     },
-    showDetail(el) {
-      this.$emit("showDetail", el);
-      console.log(el.name);
-      console.log(this.$router.currentRoute.path);
-    }
+    // showDetail(el) {
+    //   this.$emit("showDetail", el);
+    //   console.log(el.name);
+    //   console.log(this.$router.currentRoute.path);
+    // },
+    updateDetail (el) {
+        this.$store.dispatch('updateAction', el)
+      }
   },
 };
 </script>
