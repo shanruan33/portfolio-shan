@@ -1,12 +1,27 @@
 <template>
   <div class="site-section site-portfolio">
     <div class="container">
-      <div class="row mb-5 align-items-center">
+      <div v-if="this.$router.currentRoute.path !=='/work'" class="row mb-5 align-items-center">
         <div class="col-md-12 col-lg-6 mb-4 mb-lg-0" data-aos="fade-up">
           <h2 id="works">Hey, I'm Shan Ruan</h2>
           <p class="mb-0">Frontend Developer &amp; UX Designer</p>
         </div>
         <div class="col-md-12 col-lg-6 text-left text-lg-right">
+          <div class="filters">
+            <a
+              v-for="(val, key) in option.getFilterData"
+              v-bind:key="key"
+              :class="[key===filterOption? 'is-checked' : '']"
+              @click="filter(key)"
+            >{{key}}</a>
+          </div>
+        </div>
+      </div>
+      <div v-else>
+        <div class="col-md-12 mb-4 text-lg-center" data-aos="fade-up">
+          <h2 id="works">More Works</h2>
+        </div>
+        <div class="col-md-12 mb-5 text-left text-lg-center" data-aos="fade-up">
           <div class="filters">
             <a
               v-for="(val, key) in option.getFilterData"
@@ -36,15 +51,13 @@
             :key="index"
             class="item col-sm-6 col-md-4 col-lg-4 mb-4"
           >
-            <!-- <a href="#" class="item-wrap"> -->
-            <router-link to="/work" class="item-wrap">
+            <router-link to="/work" class="item-wrap" @click.native="showDetail(element)">
               <div class="work-info">
                 <h3 class="name">{{element.name}}</h3>
-                <p class="description">{{element.description}}</p>
+                <p class="label">{{element.label}}</p>
                 <span>{{element.category}}</span>
               </div>
               <img class="img-fluid" :src="require(`@/assets/img/${element.img}.png`)" />
-              <!-- </a> -->
             </router-link>
           </div>
         </isotope>
@@ -75,42 +88,60 @@ export default {
       list: [
         {
           name: "Flow & Wellness Studio",
-          description: "React E-Commerce",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo, id recusandae molestias illum unde pariatur, enim tempora, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo, id recusandae molestias illum unde pariatur, enim tempora",
+          label: "React E-Commerce Dev.",
           img: "flow",
+          tech: ["React", "HTML/CSS", "Adobe XD"],
           featured: true,
           category: "Web_Dev",
           react: true
         },
         {
           name: "PlantMe",
-          description: "Landing Page",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo, id recusandae molestias illum unde pariatur, enim tempora",
+          label: "Landing Page Dev.",
           img: "plantme",
+          tech: ["React", "HTML/CSS", "Adobe XD"],
           category: "Web_Dev"
         },
         {
           name: "Wine Wiki",
-          description: "Full-stack",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo, id recusandae molestias illum unde pariatur, enim tempora",
+          label: "Full-stack Dev.",
           img: "winewiki",
+          tech: ["React", "HTML/CSS", "Adobe XD"],
           featured: true,
           category: "Web_Dev"
         },
         {
           name: "BIXI",
-          description: "Physical Interface",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo, id recusandae molestias illum unde pariatur, enim tempora",
+          label: "Physical Interface Design",
           img: "bixi",
+          tech: ["React", "HTML/CSS", "Adobe XD"],
           category: "UI/UX"
         },
 
         {
           name: "Self-lightening Mirror",
-          description: "Arduino",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo, id recusandae molestias illum unde pariatur, enim tempora",
+          label: "Arduino Dev.",
           img: "mirror",
+          tech: ["React", "HTML/CSS", "Adobe XD"],
           category: "other"
         },
         {
           name: "Euphoric",
-          description: "ZIM JS",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo, id recusandae molestias illum unde pariatur, enim tempora",
+          label: "ZIM JS",
           img: "euphoric",
+          tech: ["React", "HTML/CSS", "Adobe XD"],
           category: "game"
         }
       ],
@@ -163,8 +194,13 @@ export default {
     },
     layout() {
       this.$refs.cpt.layout("masonry");
+    },
+    showDetail(el) {
+      this.$emit("showDetail", el);
+      console.log(el.name);
+      console.log(this.$router.currentRoute.path);
     }
-  }
+  },
 };
 </script>
 

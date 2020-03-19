@@ -18,7 +18,16 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: Work
+    component: Work,
+    props: true,
+    beforeEnter: (to, from, next) => {
+      console.log('Entering Work', to);
+      // console.log('Entering User', to.params.userId)
+      //       to.params.myCustomizations = {
+
+      //       }
+      next()
+    }
   }
 ]
 
