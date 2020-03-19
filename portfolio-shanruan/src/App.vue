@@ -1,9 +1,21 @@
 <template>
   <div id="app">
-
+    <Nav></Nav>
     <router-view/>
+    <Footer></Footer>
   </div>
 </template>
+
+<script>
+import Footer from './components/Footer'
+import Nav from './components/Nav'
+export default {
+  component:{
+    Footer,
+    Nav
+  }
+}
+</script>>
 
 <style>
 @import url("https://fonts.googleapis.com/css?family=Inconsolata&display=swap");
@@ -14,24 +26,4 @@
   font-family: "Inconsolata", monosapce;
   color: #0d1e2d;
 }
-/* #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-} */
-
-/* #nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-} */
 </style>

@@ -1,8 +1,8 @@
 <template>
   <div class="site-section">
-    <div id="nav">
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link>|
-    </div>
+    </div> -->
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-7" data-aos="fade-up">
@@ -38,7 +38,7 @@
               </ul>
 
               <p>
-                <a href="#" class="readmore">Demo / Details</a>
+                <a href="#" class="readmore">View Demo / More Details</a>
               </p>
             </div>
           </div>
