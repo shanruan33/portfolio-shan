@@ -1,8 +1,13 @@
+require('@danzen/createjs');
+const makeZIM = require('zimjs');
+const zim = makeZIM(); // pass in true to use zim namespace **
+const [zog] = zim.getGlobals();
+
 const scaling = "holder"; // this will resize to fit inside the screen dimensions
-const width = 1000;
-const height = 500;
-const color = white; // ZIM colors like green, blue, pink, faint, clear, etc.
-const outerColor = dark; // any HTML colors like "violet", "#333", etc. are fine to use
+// const width = 1000;
+// const height = 500;
+// const color = white; // ZIM colors like green, blue, pink, faint, clear, etc.
+// const outerColor = dark; // any HTML colors like "violet", "#333", etc. are fine to use
 const assets = ["https://i.postimg.cc/SK7wfJLH/sletter.png","https://i.postimg.cc/FHct1PYr/hletter.png","https://i.postimg.cc/sDbdjFDH/aletter.png","https://i.postimg.cc/pdtwjDjD/nletter.png"];
 
 
@@ -20,7 +25,7 @@ frame.on("ready", () => { // ES6 Arrow Function - like function(){}
       const shan = new Container(stageW, stageH).center();
       const size = 60;
       loop(4, function (i) {
-          let num =i%2; 
+          //let num =i%2; 
         const container = new Container(size*.7, size*.7).addTo(shan).centerReg().pos(40 + i * size, frame.height*.52).drag({ all: true });//as long as I delete the outline here, console will show can't define my hitTest down at 92 & 100
         const blob = new Blob({
           radius: size*.3,
