@@ -31,10 +31,10 @@
               <a href="https://codepen.io/shanruan33" class="mr-3">
                 <font-awesome-icon :icon="['fab', 'codepen']" size="1x" inverse />
               </a>
-              <a href="https://codepen.io/shanruan33" class="mr-3">
+              <a href="https://www.behance.net/shanruan33" class="mr-3">
                 <font-awesome-icon :icon="['fab', 'behance-square']" size="2x" inverse />
               </a>
-              <a href="https://codepen.io/shanruan33" class="mr-3">
+              <a href="https://www.linkedin.com/in/shanruan" class="mr-3">
                 <font-awesome-icon :icon="['fab', 'linkedin']" size="2x" inverse />
               </a>
               <!-- <div>

@@ -7,7 +7,7 @@
             <h3 id="contact" class="h3 heading contact">Contact Me</h3>
             <p>
               Email:
-              <a href="mailto:shanruan333@gmail.com?subject=hello">shanruan333@gmail.com</a>
+              <a href="mailto:shanruan333@gmail.com?subject=hello" id="contact-email">shanruan333@gmail.com</a>
               <br />Mobile: +1 438 6309212
             </p>
           </div>
@@ -32,10 +32,10 @@
             <a href="https://codepen.io/shanruan33" class="mr-2">
               <font-awesome-icon :icon="['fab', 'codepen']" size="1x" color="black" />
             </a>
-            <a href="https://codepen.io/shanruan33" class="mr-2">
+            <a href="https://www.behance.net/shanruan33" class="mr-2">
               <font-awesome-icon :icon="['fab', 'behance']" size="1x" color="black" />
             </a>
-            <a href="https://codepen.io/shanruan33" class="mr-2">
+            <a href="https://www.linkedin.com/in/shanruan" class="mr-2">
               <font-awesome-icon :icon="['fab', 'linkedin-in']" size="1x" color="black" />
             </a>
           </div>
